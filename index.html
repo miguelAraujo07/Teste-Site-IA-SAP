@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP Security — Protegendo seu ambiente SAP</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { color: #222; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #0a6ed1, #053a74); color: #fff; padding: 4rem 2rem; text-align: center; }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+    nav { background: #042b57; }
+    nav ul { display: flex; justify-content: center; list-style: none; }
+    nav a { display: block; padding: 1rem 1.5rem; color: #fff; text-decoration: none; }
+    nav a:hover { background: #0a6ed1; }
+    section { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+    h2 { color: #0a6ed1; margin-bottom: 1rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+    .card h3 { margin-bottom: .5rem; }
+    ul.topicos { margin-left: 1.5rem; }
+    footer { background: #042b57; color: #aaa; text-align: center; padding: 1.5rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔐 SAP Security</h1>
+    <p>Boas práticas para proteger seu ambiente SAP</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#conceitos">Conceitos</a></li>
+      <li><a href="#pilares">Pilares</a></li>
+      <li><a href="#praticas">Boas Práticas</a></li>
+      <li><a href="#ferramentas">Ferramentas</a></li>
+    </ul>
+  </nav>
+
+  <section id="conceitos">
+    <h2>O que é SAP Security?</h2>
+    <p>SAP Security é o conjunto de processos, configurações e controles que garantem a confidencialidade, integridade e disponibilidade dos dados e sistemas SAP, como ECC, S/4HANA, BW e Fiori. Envolve desde a gestão de acessos de usuários até a proteção da infraestrutura subjacente.</p>
+  </section>
+
+  <section id="pilares">
+    <h2>Pilares principais</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🎭 Autorizações</h3>
+        <p>Gestão de roles, perfis e objetos de autorização (S_TCODE, etc.) seguindo o princípio do menor privilégio.</p>
+      </div>
+      <div class="card">
+        <h3>👤 Gestão de Identidades</h3>
+        <p>Ciclo de vida de usuários, integração com IDM/IAG e revisão periódica de acessos.</p>
+      </div>
+      <div class="card">
+        <h3>⚠️ Segregação de Funções (SoD)</h3>
+        <p>Identificação e mitigação de conflitos de segregação de funções com regras de risco.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ Hardening & Monitoramento</h3>
+        <p>Configurações seguras (parâmetros de perfil, SNC), RFCs protegidas e monitoramento de logs (SM20, SIEM).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="praticas">
+    <h2>Boas práticas</h2>
+    <ul class="topicos">
+      <li>Remova autorizações excessivas do SAP_ALL e do usuário DDIC em produção.</li>
+      <li>Proteja transações críticas como SU01, PFCG, SE16 e SCC4.</li>
+      <li>Ative o Security Audit Log (SM19/SM20) e monitore eventos críticos.</li>
+      <li>Aplique Security Notes e patches regularmente.</li>
+      <li>Restrinja destinos RFC sensíveis e use SNC/criptografia.</li>
+      <li>Revise parâmetros de perfil (login/no_automatic_user_sapstar, password policy).</li>
+    </ul>
+  </section>
+
+  <section id="ferramentas">
+    <h2>Ferramentas comuns</h2>
+    <ul class="topicos">
+      <li><strong>PFCG / SU01 / SU53 / SUIM</strong> — administração e auditoria de autorizações.</li>
+      <li><strong>SAP GRC Access Control (IAG)</strong> — gestão de riscos SoD e provisioning.</li>
+      <li><strong>SAP Enterprise Threat Detection (ETD)</strong> — detecção de ameaças e integração SIEM.</li>
+      <li><strong>SAP Solution Manager / Focused Run</strong> — configuração e baseline de segurança.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Site de teste — criado com OpenCode</p>
+  </footer>
+</body>
+</html>
